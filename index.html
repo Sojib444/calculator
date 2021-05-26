@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./calculator.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Calculator By Sojib</h1>
+
+        <div class="calculator">
+            <input type="text" class="input" id="screen" >
+            <table class="tble">
+                <tr>
+                    <td><button class="btn-top">(</button></td>
+                    <td><button class="btn-top">)</button></td>
+                    <td><button class="btn-top" >C</button></td>
+                    <td><button class="btn-side">%</button></td>
+                </tr>
+                <tr>
+                    <td><button>7</button></td>
+                    <td><button>8</button></td>
+                    <td><button>9</button></td>
+                    <td><button class="btn-side">X</button></td>
+                </tr>
+                <tr>
+                    <td><button>4</button></td>
+                    <td><button>5</button></td>
+                    <td><button>6</button></td>
+                    <td><button class="btn-side">-</button></td>
+                </tr>
+                <tr>
+                    <td><button>1</button></td>
+                    <td><button>2</button></td>
+                    <td><button>3</button></td>
+                    <td><button class="btn-side">+</button></td>
+                </tr>
+                <tr>
+                    <td><button>0</button></td>
+                    <td><button>.</button></td>
+                    <td><button>/</button></td>
+                    <td><button class="btn-side">=</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script >
+//   let screen = document.getElementById('screen');
+// buttons = document.querySelectorAll('button');
+
+// for (item of buttons) {
+//     item.addEventListener('click', (e) => {
+//         buttonText = e.target.innerText;
+//         console.log('Button text is ', buttonText);
+        
+
+//     })
+// }
+
+let screen=document.getElementById("screen");
+ let  Button=document.querySelectorAll("button");
+ let ScreenValue=" ";
+
+ for(item of Button)
+ {
+     item.addEventListener("click",(e)=>
+     {
+         let buttontext=e.target.innerText;
+         console.log(buttontext);
+         if(buttontext=="X")
+         {
+            buttontext="*";
+            ScreenValue += buttontext;
+            screen.value=ScreenValue;
+         }
+         else if(buttontext=="C")
+         {
+            ScreenValue = " ";
+             screen.value= ScreenValue;
+         }
+         else if(buttontext=="=")
+         {
+
+             screen.value=eval(ScreenValue)
+         }
+         else
+         {
+            ScreenValue += buttontext;
+            screen.value=ScreenValue;
+
+         }
+        
+     })
+ }
+
+    
+
+
+
+    </script>
+    
+</body>
+</html>
